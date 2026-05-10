@@ -3,42 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ORYZON | Innovación & Futuro</title>
+    <title>ORYZON | Solarpunk Dawn</title>
     <style>
-        :root { --primary: #5e17eb; --bg: #0b0b0b; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background-color: var(--bg); 
-            color: white; 
-            font-family: sans-serif; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            min-height: 100vh;
-            text-align: center;
-            padding: 20px;
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Rajdhani:wght@300;600&display=swap');
+
+        :root {
+            --glow: #5e17eb;
+            --accent: #00f2ff;
+            --bg: #050505;
         }
-        .container { border: 1px solid rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; background: rgba(255,255,255,0.03); }
-        h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--primary); letter-spacing: 2px; }
-        p { color: #888; margin-bottom: 30px; }
-        .btn { 
-            padding: 12px 30px; 
-            background: var(--primary); 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 5px; 
-            font-weight: bold; 
+
+        body, html {
+            margin: 0; padding: 0;
+            background: var(--bg);
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+            height: 100%;
+        }
+
+        /* Efecto de Luz HUD de fondo */
+        .scanline {
+            width: 100%; height: 100%;
+            position: fixed; top: 0; left: 0;
+            background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none; z-index: 10;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            padding: 20px;
+            background: radial-gradient(circle at center, #1a0b3a 0%, #050505 70%);
+            position: relative;
+        }
+
+        /* Marco Técnico inspirado en tus imágenes */
+        .hud-frame {
+            position: absolute;
+            top: 20px; left: 20px; right: 20px; bottom: 20px;
+            border: 1px solid rgba(0, 242, 255, 0.1);
+            pointer-events: none;
+        }
+
+        .hud-corner {
+            position: absolute; width: 30px; height: 30px;
+            border: 2px solid var(--accent);
+        }
+        .top-left { top: 0; left: 0; border-right: none; border-bottom: none; }
+        .bottom-right { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+        .brand {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px; letter-spacing: 5px;
+            color: var(--accent); margin-bottom: 20px;
             text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900; font-size: 3.5rem;
+            text-align: center; line-height: 1;
+            margin-bottom: 15px;
+            background: linear-gradient(to bottom, #fff 40%, #555);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .status-tag {
+            background: rgba(94, 23, 235, 0.2);
+            border: 1px solid var(--glow);
+            padding: 5px 15px; border-radius: 20px;
+            font-size: 12px; margin-bottom: 40px;
+            display: flex; align-items: center; gap: 8px;
+        }
+
+        .blink { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: pulse 1.5s infinite; }
+
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+        .btn-main {
+            padding: 15px 40px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px; cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-main:hover {
+            background: var(--accent);
+            color: black;
+            box-shadow: 0 0 20px var(--accent);
+        }
+
+        .footer-info {
+            position: absolute; bottom: 40px;
+            font-size: 10px; color: rgba(255,255,255,0.4);
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <p style="color: var(--primary); font-weight: bold; margin-bottom: 5px;">ORYZON SOLARPUNK DAWN</p>
-        <h1>EL FUTURO NO SE ESPERA.</h1>
-        <p>Hackea el presente, diseña el mañana.</p>
-        <a href="mailto:orhyzon@gmail.com" class="btn">Contactar</a>
+    <div class="scanline"></div>
+    
+    <div class="hero">
+        <div class="hud-frame">
+            <div class="hud-corner top-left"></div>
+            <div class="hud-corner bottom-right"></div>
+        </div>
+
+        <div class="brand">Oryzon Systems v1.0</div>
+        
+        <div class="status-tag">
+            <div class="blink"></div> SYSTEM ONLINE / NOVA DAWN PROJECT
+        </div>
+
+        <h1>SOLARPUNK<br>DAWN</h1>
+        
+        <p style="max-width: 400px; text-align: center; color: #aaa; margin-bottom: 30px; line-height: 1.6;">
+            Arquitectando el futuro sostenible de LATAM a través de Eco-Tech y Ed-Tech. La evolución comienza aquí.
+        </p>
+
+        <a href="mailto:orhyzon@gmail.com" class="btn-main">INITIALIZE PROTOCOL</a>
+
+        <div class="footer-info">LATAM INNOVATION HUB // EST. 2026 // PANAMÁ</div>
     </div>
 </body>
 </html>
