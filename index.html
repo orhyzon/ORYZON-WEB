@@ -3,73 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ORYZON | Innovación, Eco-Tech & Futuro</title>
-    
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://orhyzon.github.io/ORYZON-WEB/">
-    <meta property="og:title" content="ORYZON | Eco-Tech & Ed-Tech Future">
-    <meta property="og:description" content="Hackea el presente, diseña el mañana con NOVA DAWN.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80">
-
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
-    
+    <title>ORYZON | Innovación & Futuro</title>
     <style>
-        :root {
-            --primary: #5e17eb;
-            --bg: #0b0b0b;
-            --glass: rgba(255, 255, 255, 0.05);
-            --border: rgba(255, 255, 255, 0.1);
-        }
-
+        :root { --primary: #5e17eb; --bg: #0b0b0b; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: white;
-            font-family: 'Space Grotesk', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* --- BACKGROUND DYNAMICS --- */
-        .glow {
-            position: fixed;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(94, 23, 235, 0.2) 0%, rgba(0,0,0,0) 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: -1;
-            will-change: transform;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        body { 
+            background-color: var(--bg); 
+            color: white; 
+            font-family: sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh;
             text-align: center;
             padding: 20px;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--bg)), 
-                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80') center/cover;
         }
-
-        h1 {
-            font-family: 'Syncopate', sans-serif;
-            font-size: clamp(2rem, 8vw, 5rem);
+        .container { border: 1px solid rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; background: rgba(255,255,255,0.03); }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--primary); letter-spacing: 2px; }
+        p { color: #888; margin-bottom: 30px; }
+        .btn { 
+            padding: 12px 30px; 
+            background: var(--primary); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: bold; 
             text-transform: uppercase;
-            letter-spacing: -2px;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, #fff, var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
-
-        .btn-main {
-            padding:
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p style="color: var(--primary); font-weight: bold; margin-bottom: 5px;">ORYZON SOLARPUNK DAWN</p>
+        <h1>EL FUTURO NO SE ESPERA.</h1>
+        <p>Hackea el presente, diseña el mañana.</p>
+        <a href="mailto:orhyzon@gmail.com" class="btn">Contactar</a>
+    </div>
+</body>
+</html>
